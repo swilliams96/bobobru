@@ -24,6 +24,27 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\layout\layout.component.ts" />
+    <None Remove="ClientApp\src\app\restaurant-designer\restaurant-designer.component.ts" />
+    <None Remove="ClientApp\src\entities\layout.ts" />
+    <None Remove="ClientApp\src\entities\shapeType.ts" />
+    <None Remove="ClientApp\src\entities\table.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\layout\layout.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\restaurant-designer\restaurant-designer.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\entities\layout.ts" />
+    <TypeScriptCompile Include="ClientApp\src\entities\shapeType.ts" />
+    <TypeScriptCompile Include="ClientApp\src\entities\table.ts" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

@@ -1,0 +1,14 @@
+:host {
+  background-color: tomato;
+  height: 100vh;
+}
+
+.layout {
+  background-color: darkgray;
+  padding: 5%;
+  margin: 10%;
+}
+
+.image {
+  background-color: white;
+}

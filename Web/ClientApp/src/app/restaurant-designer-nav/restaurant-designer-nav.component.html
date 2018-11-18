@@ -1,0 +1,7 @@
+<div class="layout" *ngFor="let layout of layouts" (click)="selectLayout(layout)">
+  <div class="image" [innerHtml]="layout.safeImage"></div>
+  <p>{{ layout.name }}</p>
+</div>
+<div class="layout" (click)="addLayout()">
+  <h1>+</h1>
+</div>

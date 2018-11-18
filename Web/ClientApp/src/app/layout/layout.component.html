@@ -1,0 +1,8 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <ng-container *ngFor="let table of tables">
+    <circle *ngIf="table.radius > 0" (click)="selectTable(table)" [attr.cx]="table.x" [attr.cy]="table.y" [attr.r]="table.radius" stroke="black" stroke-width="2"/>
+    <rect *ngIf="table.radius == 0" (click)="selectTable(table)" [attr.x] ="table.x" [attr.y] ="table.y" [attr.width]="table.width" [attr.height]="table.height"/>
+  </ng-container>
+</svg>
+<button (click)="addTable(20,20,10)">Add Circle Table</button>
+<button (click)="addTable(50,50,0)">Add Table</button>

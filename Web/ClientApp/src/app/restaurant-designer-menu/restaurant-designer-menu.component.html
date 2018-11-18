@@ -1,0 +1,10 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item" (click)="selectLayout()">Layout</li>
+  <li class="nav-item" (click)="selectTable()">Table</li>
+  <li class="nav-item" (click)="selectTableGroup()">Groups</li>
+</ul>
+<div class="tab-content">
+  <app-layout-editor *ngIf="isLayout" [layout]="layout"></app-layout-editor>
+  <app-table-editor *ngIf="isTable" [table]="table"></app-table-editor>
+  <app-table-group-editor *ngIf="isTableGroup"></app-table-group-editor>
+</div>
