@@ -11,8 +11,9 @@ import { RestaurantDesignerComponent } from './restaurant-designer/restaurant-de
 import { RestaurantDesignerNavComponent } from './restaurant-designer-nav/restaurant-designer-nav.component';
 import { RestaurantDesignerMenuComponent } from './restaurant-designer-menu/restaurant-designer-menu.component';
 import { TableEditorComponent } from './table-editor/table-editor.component';
-import { TableGroupEditorComponent } from './table-group-editor/table-group-editor.component';
 import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
+import { TableLinkEditorComponent } from './table-link-editor/table-link-editor.component';
+import { SaveStateService } from './services/save-state.service';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
     RestaurantDesignerNavComponent,
     RestaurantDesignerMenuComponent,
     TableEditorComponent,
-    TableGroupEditorComponent,
-    LayoutEditorComponent
+    LayoutEditorComponent,
+    TableLinkEditorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,7 +34,7 @@ import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
       { path: 'restaurantdesigner', component: RestaurantDesignerComponent }
     ])
   ],
-  providers: [LayoutService],
+  providers: [LayoutService, SaveStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

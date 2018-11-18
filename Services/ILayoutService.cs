@@ -15,5 +15,7 @@ namespace Services
         IEnumerable<Layout> GetLayouts(int restaurantId);
 
         IEnumerable<Table> GetTables(int layoutId);
+
+        IEnumerable<LinkViewModel> GetLinks(int layoutId);
     }
 }

@@ -1,6 +1,35 @@
-<p>
-  table-editor works!
-</p>
-<div *ngIf="table">
-  {{ table.tableId }}
+<p>Edit the table</p>
+<div>
+  <label>Id:</label>
+  <label>{{ table.tableId }}</label>
 </div>
+<div>
+  <label>Name:</label>
+  <input [(ngModel)]="table.name">
+</div>
+<div>
+  <label>Seats:</label>
+  <input type="number" min="1" [(ngModel)]="table.seatCount">
+</div>
+<div>
+  <label>X:</label>
+  <input type="number" min="0" [(ngModel)]="table.x">
+</div>
+<div>
+  <label>Y:</label>
+  <input type="number" min="0" [(ngModel)]="table.y">
+</div>
+<div>
+  <label>Width:</label>
+  <input type="number" min="1" [(ngModel)]="table.width">
+</div>
+<div>
+  <label>Height:</label>
+  <input type="number" min="1" [(ngModel)]="table.height">
+</div>
+<div>
+    <label>Radius:</label>
+    <input type="number" min="0" [(ngModel)]="table.radius">
+</div>
+
+

@@ -1,0 +1,21 @@
+<p>
+  table-link-editor works!
+</p>
+
+<div *ngIf="links">
+  <table>
+    <tr>
+      <th>Table Name</th>
+      <th>Table Name</th>
+      <th>Seats Lost</th>
+    </tr>
+    <tr *ngFor="let link of links">
+      <td>{{ link.tableOneName }}</td>
+      <td>{{ link.tableTwoName }}</td>
+      <td>
+        <input type="number" min="0" [(ngModel)]="link.seatsLost">        
+      </td>
+      <td><button (click)="deleteLink(link)">Delete</button></td>
+    </tr>
+  </table>
+</div>

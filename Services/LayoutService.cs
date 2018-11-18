@@ -17,12 +17,21 @@ namespace Services
 
         public Table GetTable(int tableId)
         {
-            return context.Tables.SingleOrDefault(t => t.TableId == tableId);
+            return context.Tables
+                .SingleOrDefault(t => t.TableId == tableId);
         }
 
         public IEnumerable<Table> GetTables(int layoutId)
         {
-            return context.Tables.Where(t => t.LayoutId == layoutId);
+            return context.Tables
+                .Where(t => t.LayoutId == layoutId);
+        }
+
+        public IEnumerable<LinkViewModel> GetLinks(int layoutId)
+        {
+            return context.TableLinks
+                .Where(tl => tl.TableOne.LayoutId == layoutId)
+                .Select(tl => new LinkViewModel(tl));
         }
 
         public IEnumerable<Layout> GetLayouts(int restaurantId)

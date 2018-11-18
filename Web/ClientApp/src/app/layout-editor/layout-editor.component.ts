@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Layout } from '../../entities/layout';
+import { SaveStateService } from '../services/save-state.service';
 
 @Component({
   selector: 'app-layout-editor',
@@ -9,7 +10,7 @@ import { Layout } from '../../entities/layout';
 export class LayoutEditorComponent implements OnInit {
   @Input() layout: Layout;
 
-  constructor() { }
+  constructor(private saveState: SaveStateService) { }
 
   ngOnInit() {
   }

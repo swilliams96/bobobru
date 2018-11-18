@@ -1,8 +1,5 @@
-import { ShapeType } from './shapeType'
-
 export interface Table {
   tableId: number;
-  tableGroupId: number;
   name: string;
   x: number;
   y: number;
@@ -10,4 +7,5 @@ export interface Table {
   height: number;
   radius: number;
   seatCount: number;
+  selected: boolean;
 }

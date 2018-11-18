@@ -15,7 +15,6 @@ namespace Services
                 new Table()
                 {
                     TableId = 1,
-                    TableGroupId = 1,
                     Name = "Table1",
                     ShapeType = ShapeType.Rectangle,
                     X = 10,
@@ -28,7 +27,6 @@ namespace Services
                 new Table()
                 {
                     TableId = 2,
-                    TableGroupId = 1,
                     Name = "Table2",
                     ShapeType = ShapeType.Rectangle,
                     X = 20,
@@ -41,8 +39,7 @@ namespace Services
                 new Table()
                 {
                     TableId = 3,
-                    TableGroupId = 2,
-                    Name = "Table1",
+                    Name = "Table3",
                     ShapeType = ShapeType.Circle,
                     X = 30,
                     Y = 30,
@@ -91,6 +88,68 @@ namespace Services
         public string SaveLayout(Layout layout)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<LinkViewModel> GetLinks(int layoutId)
+        {
+            var tableOne = new Table()
+            {
+                TableId = 1,
+                Name = "Table1",
+                ShapeType = ShapeType.Rectangle,
+                X = 10,
+                Y = 10,
+                Width = 10,
+                Height = 10,
+                Radius = 0,
+                SeatCount = 4
+            };
+            var tableTwo = new Table()
+            {
+                TableId = 2,
+                Name = "Table2",
+                ShapeType = ShapeType.Rectangle,
+                X = 20,
+                Y = 20,
+                Width = 10,
+                Height = 10,
+                Radius = 0,
+                SeatCount = 2
+            };
+            var link = new Link()
+            {
+                LinkId = 1,
+                TableOne = tableOne,
+                TableOneId = tableOne.TableId,
+                TableTwo = tableTwo,
+                TableTwoId = tableTwo.TableId,
+                SeatsLost = 2
+            };
+            var link2 = new Link()
+            {
+                LinkId = 2,
+                TableOne = tableOne,
+                TableOneId = tableOne.TableId,
+                TableTwo = tableTwo,
+                TableTwoId = tableTwo.TableId,
+                SeatsLost = 3
+            };
+            var link3 = new Link()
+            {
+                LinkId = 3,
+                TableOne = tableOne,
+                TableOneId = tableOne.TableId,
+                TableTwo = tableTwo,
+                TableTwoId = tableTwo.TableId,
+                SeatsLost = 4
+            };
+
+            return new List<LinkViewModel>()
+            {
+                new LinkViewModel(link),
+                new LinkViewModel(link2),
+                new LinkViewModel(link3)
+            };
         }
     }
 }

@@ -27,8 +27,10 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\layout\layout.component.ts" />
     <None Remove="ClientApp\src\app\restaurant-designer\restaurant-designer.component.ts" />
+    <None Remove="ClientApp\src\app\services\save-state.service.ts" />
+    <None Remove="ClientApp\src\entities\clickMode.ts" />
     <None Remove="ClientApp\src\entities\layout.ts" />
-    <None Remove="ClientApp\src\entities\shapeType.ts" />
+    <None Remove="ClientApp\src\entities\link.ts" />
     <None Remove="ClientApp\src\entities\table.ts" />
   </ItemGroup>
 
@@ -40,9 +42,11 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\layout\layout.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\restaurant-designer\restaurant-designer.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\save-state.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\entities\layout.ts" />
-    <TypeScriptCompile Include="ClientApp\src\entities\shapeType.ts" />
+    <TypeScriptCompile Include="ClientApp\src\entities\clickMode.ts" />
     <TypeScriptCompile Include="ClientApp\src\entities\table.ts" />
+    <TypeScriptCompile Include="ClientApp\src\entities\link.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

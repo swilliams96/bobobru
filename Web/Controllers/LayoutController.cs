@@ -21,15 +21,21 @@ namespace Web.Controllers
         }
 
         [HttpGet("[action]/{id}")]
-        public IEnumerable<Table> GetTables([FromRoute] int id)
+        public IEnumerable<Table> GetTables([FromRoute] int layoutId)
         {
-            return layoutService.GetTables(id);
+            return layoutService.GetTables(layoutId);
         }
 
         [HttpGet("[action]/{id}")]
         public IEnumerable<Layout> GetLayouts([FromRoute] int restaurantId)
         {
             return layoutService.GetLayouts(restaurantId);
+        }
+
+        [HttpGet("[action]/{id}")]
+        public IEnumerable<LinkViewModel> GetLinks([FromRoute] int layoutId)
+        {
+            return layoutService.GetLinks(layoutId);
         }
     }
 }

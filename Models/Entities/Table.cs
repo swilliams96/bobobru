@@ -8,9 +8,8 @@ namespace Models.Entities
     {
         public int TableId { get; set; }
         public int LayoutId { get; set; }
-        public int TableGroupId { get; set; }
         public Layout Layout { get; set; }
-        public TableGroup TableGroup { get; set; }
+        public Link TableGroup { get; set; }
         public string Name { get; set; }
         public ShapeType ShapeType { get; set; }
         public int X { get; set; }
@@ -20,5 +19,6 @@ namespace Models.Entities
         public int Radius { get; set; }
         public int SeatCount { get; set; }
         public bool IsDeleted { get; set; }
+        public ICollection<Link> TableLinks { get; set; }
     }
 }

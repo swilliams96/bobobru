@@ -15,7 +15,7 @@ namespace Models.Entities
         public Restaurant Restaurant { get; set; }
 
         public int TableGroupId { get; set; }
-        public TableGroup TableGroup { get; set; }
+        public Link TableGroup { get; set; }
 
         public DateTime Date { get; set; }
 

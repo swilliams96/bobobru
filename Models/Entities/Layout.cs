@@ -13,6 +13,6 @@ namespace Models.Entities
         public string Image { get; set; }
         public int TableCount { get; set; }
 
-        public ICollection<TableGroup> TableGroups { get; set; }
+        public ICollection<Link> TableGroups { get; set; }
     }
 }

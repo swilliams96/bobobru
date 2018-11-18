@@ -13,7 +13,7 @@ namespace Models.Entities
         public DbSet<Layout> Layouts { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Table> Tables { get; set; }
-        public DbSet<TableGroup> TableGroups { get; set; }
+        public DbSet<Link> TableLinks { get; set; }
         public DbSet<User> Users { get; set; }        
     }
 }

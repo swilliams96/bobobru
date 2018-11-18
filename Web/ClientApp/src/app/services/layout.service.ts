@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Table } from '../../entities/table'
 import { Layout } from '../../entities/layout'
 import { DomSanitizer } from '@angular/platform-browser';
+import { Link } from '../../entities/link';
 
 @Injectable()
 export class LayoutService {
@@ -12,12 +13,16 @@ export class LayoutService {
     this.baseUrl = baseUrl;
   }
 
-  getTables(id: number) {
-    return this.http.get<Table[]>(this.baseUrl + 'api/Layout/GetTables/' + id)
+  getTables(layoutId: number) {
+    return this.http.get<Table[]>(this.baseUrl + 'api/Layout/GetTables/' + layoutId)
   }
 
-  getLayouts(id: number) {
-    return this.http.get<Layout[]>(this.baseUrl + 'api/Layout/GetLayouts/' + id);
+  getLayouts(restaurantId: number) {
+    return this.http.get<Layout[]>(this.baseUrl + 'api/Layout/GetLayouts/' + restaurantId);
+  }
+
+  getLinks(layoutId: number) {
+    return this.http.get<Link[]>(this.baseUrl + 'api/Layout/GetLinks/' + layoutId)
   }
 
   updateTables(layoutId: number, tables: Table[]) {
