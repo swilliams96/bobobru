@@ -19,7 +19,7 @@ namespace Models.Entities
 
         public DateTime Date { get; set; }
 
-        public int ExpectedlHour { get; set; }
+        public int ExpectedHour { get; set; }
         public int ExpectedTime { get; set; }
 
         public int ArrivalHour { get; set; }
